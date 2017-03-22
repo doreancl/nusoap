@@ -3836,6 +3836,7 @@ class nusoap_server extends nusoap_base {
 					}
 				}
 				$this->headers[$k] = $v;
+				$v = is_array($v) ? implode("\r\n", $v) : $v;
 				$this->request .= "$k: $v\r\n";
 				$this->debug("$k: $v");
 			}
